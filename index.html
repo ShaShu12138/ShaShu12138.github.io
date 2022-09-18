@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Yathzee</h1>
+      <div class="left">
+        <h2 class="turn">Player1's turn</h2>
+        <h2 class="rollTimes">3 Roll left</h2>
+        <div class="dicePart">
+          <img src="./img/dice1.png" alt="" class="dice dice1" />
+          <img src="./img/dice2.png" alt="" class="dice dice2" />
+          <img src="./img/dice3.png" alt="" class="dice dice3" />
+          <img src="./img/dice4.png" alt="" class="dice dice4" />
+          <img src="./img/dice5.png" alt="" class="dice dice5" />
+        </div>
+        <div class="hold">
+          <button class="btn btnHold1"></button>
+          <button class="btn btnHold2"></button>
+          <button class="btn btnHold3"></button>
+          <button class="btn btnHold4"></button>
+          <button class="btn btnHold5"></button>
+        </div>
+        <button class="btn btnRoll">Roll!</button>
+        <button class="btn btnNew">New Game</button>
+      </div>
+      <div class="right">
+        <table border="1">
+          <tr>
+            <td></td>
+            <td>Player1</td>
+          </tr>
+          <tr>
+            <td>Ones</td>
+            <td class="score1"></td>
+          </tr>
+          <tr>
+            <td>Twos</td>
+            <td class="score2"></td>
+          </tr>
+          <tr>
+            <td>Threes</td>
+            <td class="score3"></td>
+          </tr>
+          <tr>
+            <td>Fours</td>
+            <td class="score4"></td>
+          </tr>
+          <tr>
+            <td>Fives</td>
+            <td class="score5"></td>
+          </tr>
+          <tr>
+            <td>Sixes</td>
+            <td class="score6"></td>
+          </tr>
+          <tr>
+            <td>Sum</td>
+            <td class="scoreSum"></td>
+          </tr>
+          <tr>
+            <td>Bonus</td>
+            <td class="scoreBonus"></td>
+          </tr>
+          <tr>
+            <td>3 of a kind</td>
+            <td class="score3Kind"></td>
+          </tr>
+          <tr>
+            <td>4 of a kind</td>
+            <td class="score4Kind"></td>
+          </tr>
+          <tr>
+            <td>Full house</td>
+            <td class="scoreFullHouse"></td>
+          </tr>
+          <tr>
+            <td>Small straight</td>
+            <td class="scoreSStraight"></td>
+          </tr>
+          <tr>
+            <td>Large straight</td>
+            <td class="scoreLStraight"></td>
+          </tr>
+          <tr>
+            <td>Chance</td>
+            <td class="scoreChance"></td>
+          </tr>
+          <tr>
+            <td>YAHTZEE</td>
+            <td class="scoreYathzee"></td>
+          </tr>
+          <tr>
+            <td>TOTAL</td>
+            <td class="scoreTotal"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
