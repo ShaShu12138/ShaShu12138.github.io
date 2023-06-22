@@ -598,6 +598,13 @@ function reset() {
     showScoreTotal.style.backgroundColor = "rgb(255, 255, 0)";
     newGame.style.display = "block";
   }
+  if (showScoreTotal.textContent >= 200  ) {
+    Swal.fire({
+      icon: 'info',
+      title: '新的传闻！',
+      text: '“听说宝藏掩藏在白纱之下，不知道哪些傻子传成了白沙！”\n“城堡...那就是国王的家吧？”\n“王座...也就是国王常坐的地方？”',
+    })
+  }
 }
 
 newGame.addEventListener("click", function () {
