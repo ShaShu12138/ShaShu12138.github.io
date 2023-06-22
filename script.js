@@ -598,7 +598,7 @@ function reset() {
     showScoreTotal.style.backgroundColor = "rgb(255, 255, 0)";
     newGame.style.display = "block";
   }
-  if (showScoreTotal.textContent >= 200  ) {
+  if (showScoreTotal.textContent >= 10  ) {
     Swal.fire({
       icon: 'info',
       title: '新的传闻！',
