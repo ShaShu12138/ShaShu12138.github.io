@@ -1,4 +1,4 @@
-"use strict";
+
 //声明骰子
 let dice1El = document.querySelector(".dice1");
 let dice2El = document.querySelector(".dice2");
