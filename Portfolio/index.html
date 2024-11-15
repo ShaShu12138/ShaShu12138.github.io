@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ze Jing</title>
+		<link rel="icon" href="./favicon.ico" />
+		<link rel="stylesheet" href="./Style/mian.css" />
+	</head>
+	<body>
+		<!-- Main container for all sections -->
+		<div class="container">
+			<!-- Navbar for easy navigation across tabs -->
+			<header class="navbar">
+				<h1 class="logo">Ze Jing</h1>
+				<nav>
+					<ul class="nav-links">
+						<li>
+							<a href="#home">Home</a>
+						</li>
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<li>
+							<a href="#projects">Projects</a>
+						</li>
+						<li>
+							<a href="#skills">Skills</a>
+						</li>
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Hero Section with a large intro and interactive animations -->
+			<div class="hero" id="home">
+				<div class="hero-content">
+					<h2>Ze Jing</h2>
+					<p>Game Programming Portfolio</p>
+					<hr />
+				</div>
+				<img
+					src="./Image/Hero background.png"
+					alt="Hero background"
+					class="hero-image"
+				/>
+			</div>
+
+			<!-- About Section with an in-depth bio and background -->
+			<section class="about" id="about">
+				<h2>About Me</h2>
+				<p>
+					Hi, I'm Ze Jing, an aspiring game programmer. I’m currently
+					studying at HvA, aiming to become a cutting-edge game
+					developer. I enjoy exploring various game genres, pushing
+					the boundaries of my creativity and technical skills. I’m
+					always eager to learn—whether it’s mastering game engines,
+					diving deep into programming challenges, or using
+					unconventional hardware for unique projects. I also learn
+					quickly; I once completed a three-year MBO program in just
+					one year and graduated with outstanding results.
+				</p>
+			</section>
+
+			<!-- Projects Section showcasing multiple project entries -->
+			<section class="projects" id="projects">
+				<h2>Projects</h2>
+				<div class="project-gallery">
+					<a
+						href="https://shashu12138.itch.io/adventure-of-the-ball"
+						target="_blank"
+						class="project-item"
+					>
+						<img
+							src="./Image/Hero background.png"
+							alt="Project 1"
+						/>
+						<h3>Adventure Of The Ball</h3>
+						<p>Use the ball to challenge the giant stone man.</p>
+					</a>
+					<a
+						href="https://dragonnight250.itch.io/danmaku-rhapsody"
+						target="_blank"
+						class="project-item"
+					>
+						<img
+							src="./Image/Danmaku Rhapsody.jpg"
+							alt="Project 2"
+						/>
+						<h3>Danmaku Rhapsody</h3>
+						<p>
+							A mesmerizing fan-made bullet hell game inspired by
+							the renowned TouHou Project.
+						</p>
+					</a>
+					<a
+						href="https://dragonnight250.itch.io/danmaku-rhapsody"
+						target="_blank"
+						class="project-item"
+					>
+						<img
+							src="./Image/Dungeon exploration.png"
+							alt="Project 2"
+						/>
+						<h3>Dungeon exploration</h3>
+						<p>
+							In the dim dungeon, you found a lot of treasure. But
+							on your way back, monsters blocked your way. The gem
+							in your hand began to glow...
+						</p>
+					</a>
+				</div>
+			</section>
+
+			<!-- Skills Section with animated progress bars -->
+			<section class="skills" id="skills">
+				<h2>Skills</h2>
+				<div class="skills-container">
+					<!-- Row 1 -->
+					<div class="skill">
+						<h3>C#</h3>
+						<div class="progress-bar-container">
+							<div class="progress-bar" data-width="70%"></div>
+						</div>
+					</div>
+					<div class="skill">
+						<h3>Unity</h3>
+						<div class="progress-bar-container">
+							<div class="progress-bar" data-width="70%"></div>
+						</div>
+					</div>
+
+					<!-- Row 2 -->
+					<div class="skill">
+						<h3>JavaScript</h3>
+						<div class="progress-bar-container">
+							<div class="progress-bar" data-width="80%"></div>
+						</div>
+					</div>
+					<div class="skill">
+						<h3>HTML & CSS</h3>
+						<div class="progress-bar-container">
+							<div class="progress-bar" data-width="80%"></div>
+						</div>
+					</div>
+
+					<!-- Row 3 -->
+					<div class="skill">
+						<h3>Game Design</h3>
+						<div class="progress-bar-container">
+							<div class="progress-bar" data-width="70%"></div>
+						</div>
+					</div>
+					<div class="skill">
+						<h3>Learning Ability</h3>
+						<div class="progress-bar-container">
+							<div class="progress-bar" data-width="95%"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Contact Section with integrated form and social media links -->
+			<section class="contact" id="contact">
+				<h2>Contact</h2>
+				<p>You can find me here!</p>
+				<p>
+					Email:
+					<a href="mailto:zejing2001@hotmail.com"
+						>zejing2001@hotmail.com</a
+					>
+				</p>
+				<p>
+					Tel:
+					<a href="" id="tel">+31 0684913586</a>
+				</p>
+				<p>
+					CV:
+					<a href="./Ze Jing CV.pdf" download="Ze Jing CV"
+						>Download</a
+					>
+				</p>
+				<hr />
+				<p>
+					<a href="https://github.com/ShaShu12138">
+						<img src="./Image/GitHub Logo.png" alt="GitHub"
+					/></a>
+					<a href="https://gitlab.fdmci.hva.nl/jingz">
+						<img src="./Image/GitLab Logo.png" alt="GitLab"
+					/></a>
+				</p>
+			</section>
+		</div>
+
+		<!-- External JS libraries for animations and effects -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="./Script/main.js"></script>
+	</body>
+</html>
