@@ -80,3 +80,31 @@ document.querySelector("#tel").addEventListener("click", (e) => {
 		color: "#fff",
 	});
 });
+
+// 监听点击事件
+document.querySelector("#download-cv").addEventListener("click", (e) => {
+	e.preventDefault(); // 阻止默认下载行为
+	Swal.fire({
+	  title: "Download Confirmation",
+	  text: "Do you want to download the CV?",
+	  icon: "question",
+	  showCancelButton: true,
+	  confirmButtonText: "Yes, Download!",
+	  cancelButtonText: "Cancel",
+	  confirmButtonColor: "#FADA5E",
+	  cancelButtonColor: "#d33",
+	  background: "#1a1a1a",
+	  color: "#fff",
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		// 确认后触发下载
+		const link = document.createElement("a");
+		link.href = "./Ze Jing CV.pdf";
+		link.download = "Ze Jing CV";
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	  }
+	});
+  });
+  
