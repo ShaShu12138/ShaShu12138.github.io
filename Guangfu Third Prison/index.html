@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>广府第三监狱（虚拟）- 家属平台 - 节日音频查询</title>
+  <meta name="description" content="架空虚拟世界：广府第三监狱家属平台 - 节日音频查询" />
+  <style>
+    :root{
+      --bg:#f4f6f9;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --blue:#1d4ed8;
+      --blue2:#0b3aa5;
+      --red:#b91c1c;
+      --shadow: 0 10px 30px rgba(16,24,40,.08);
+      --radius: 12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+                   "PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ===== Top Government-style header ===== */
+    .topbar{
+      background: linear-gradient(0deg, var(--blue2), var(--blue));
+      color:#fff;
+      padding: env(safe-area-inset-top) 0 0 0;
+      box-shadow: 0 8px 20px rgba(2,6,23,.18);
+    }
+    .top-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 0;
+    }
+    
+    .brand-title{
+      min-width:0;
+      line-height:1.2;
+    }
+    .brand-title h1{
+      margin:0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
+    }
+    .brand-title .sub{
+      margin-top:4px;
+      font-size: 12px;
+      opacity:.88;
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow: ellipsis;
+    }
+
+    .top-tools{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex:0 0 auto;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      font-size: 12px;
+      user-select:none;
+    }
+    .pill svg{opacity:.95}
+
+    /* ===== Nav ===== */
+    .nav{
+      background:#fff;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 10px;
+      display:flex;
+      gap:6px;
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 14px 14px;
+      color:#0f172a;
+      text-decoration:none;
+      font-size: 14px;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      user-select:none;
+    }
+    .nav a:hover{background:#f8fafc}
+    .nav a.active{
+      color: var(--blue2);
+      border-bottom-color: var(--blue2);
+      font-weight: 700;
+    }
+
+    /* ===== Layout ===== */
+    .container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    .crumbs{
+      font-size: 12px;
+      color: var(--muted);
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      align-items:center;
+      margin: 10px 0 14px;
+    }
+    .crumbs span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+    .crumbs .sep{opacity:.5}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background:var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-hd{
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      background: linear-gradient(180deg, #ffffff, #fbfcff);
+    }
+    .card-hd h2{
+      margin:0;
+      font-size: 16px;
+      letter-spacing:.2px;
+    }
+    .tag{
+      font-size: 12px;
+      color: var(--blue2);
+      background: rgba(29,78,216,.08);
+      border: 1px solid rgba(29,78,216,.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .card-bd{ padding: 16px; }
+
+    .notice{
+      border-left: 4px solid rgba(29,78,216,.55);
+      background: #f3f7ff;
+      padding: 12px 12px;
+      border-radius: 10px;
+      color: #0f2e6b;
+      font-size: 13px;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .form{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 520px){
+      .form{grid-template-columns: 1fr;}
+    }
+
+    .field label{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .field input{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      outline:none;
+      font-size: 14px;
+      background: #fff;
+    }
+    .field input:focus{
+      border-color: rgba(29,78,216,.45);
+      box-shadow: 0 0 0 3px rgba(29,78,216,.12);
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      margin-top: 12px;
+      flex-wrap:wrap;
+    }
+    button{
+      appearance:none;
+      -webkit-appearance:none;
+      border: 1px solid var(--line);
+      background:#fff;
+      color: #0f172a;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor:pointer;
+      user-select:none;
+    }
+    button.primary{
+      background: linear-gradient(0deg, var(--blue2), var(--blue));
+      border-color: rgba(255,255,255,.0);
+      color:#fff;
+      box-shadow: 0 10px 18px rgba(29,78,216,.22);
+    }
+    button:active{ transform: translateY(1px); }
+
+    /* Result table */
+    .result{
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow:hidden;
+      display: none; /* 初始状态隐藏 */
+    }
+    .result .row{
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+    .result .row:first-child{ border-top:0; }
+    .result .k{
+      background:#f8fafc;
+      padding: 12px 12px;
+      color: #334155;
+      font-size: 13px;
+      border-right: 1px solid var(--line);
+    }
+    .result .v{
+      padding: 12px 12px;
+      font-size: 13px;
+      color:#0f172a;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .status{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size: 12px;
+      color: #7c2d12;
+      background: rgba(249,115,22,.08);
+      border: 1px solid rgba(249,115,22,.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .status .dot{
+      width:8px;height:8px;border-radius:50%;
+      background: rgba(249,115,22,.85);
+      box-shadow: 0 0 0 3px rgba(249,115,22,.18);
+    }
+
+    .player{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .player button{
+      padding: 10px 12px;
+      border-radius: 999px;
+    }
+
+    /* Aside */
+    .aside-list{
+      padding: 6px 16px 14px;
+    }
+    .aside-item{
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .aside-item:last-child{border-bottom:0}
+    .aside-item .t{
+      font-size: 13px;
+      color:#0f172a;
+      font-weight:700;
+      margin-bottom: 6px;
+    }
+    .aside-item .d{
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer{
+      margin-top: 18px;
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+    .footer-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+      color: var(--muted);
+      font-size: 12px;
+      line-height:1.6;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    .links{
+      display:flex; gap:12px; flex-wrap:wrap;
+    }
+    .links a{
+      color: var(--muted);
+      text-decoration:none;
+    }
+    .links a:hover{color:#111827}
+
+    /* Modal */
+    .modal-mask {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, .55);
+      display: none;
+        
+      /* 关键修改：改为 center */
+      align-items: center; 
+      justify-content: center;
+        
+      /* 这里的 padding 可以改为统一的，防止弹窗贴边 */
+      padding: 20px; 
+      z-index: 9999;
+    }
+    .modal-mask.show{display:flex;}
+    .modal {
+      width: min(520px, 100%);
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.0);
+        
+      /* 应用修改后的动画 */
+      animation: pop .2s ease-out; 
+    }
+
+    @keyframes pop {
+      from { 
+        transform: scale(0.95); /* 稍微缩小 */
+        opacity: 0; 
+      }
+      to { 
+        transform: scale(1); 
+        opacity: 1; 
+      }
+    }
+    .modal-hd{
+      padding: 12px 14px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .modal-hd strong{font-size:14px;}
+    .modal-bd{
+      padding: 14px;
+      font-size: 14px;
+      color:#0f172a;
+      line-height:1.6;
+    }
+    .modal-ft{
+      padding: 12px 14px;
+      display:flex;
+      gap:10px;
+      justify-content:flex-end;
+      border-top: 1px solid var(--line);
+    }
+    .modal-ft button{
+      min-width: 110px;
+    }
+    .danger{
+      color: var(--red);
+      font-weight: 800;
+    }
+    .xbtn{
+      border: 0;
+      background: transparent;
+      padding: 8px;
+      margin:-8px;
+      cursor:pointer;
+      border-radius: 10px;
+    }
+    .xbtn:active{transform: translateY(1px);}
+    /* 替换为以下内容 */
+    .emblem {
+      width: 60px;
+      height: 60px;
+      object-fit: cover; /* 确保图片填充圆形区域且不变形 */
+      padding: 4px; /* 可选：如果你的 Logo 撑得太满，可以加一点内边距让它小一点 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="top-inner">
+      <div class="brand" role="banner" aria-label="网站标识">
+        <img class="emblem" src="./Logo.png" alt="监狱徽章 Logo">
+        <div class="brand-title">
+          <h1>广府第三监狱</h1>
+          <div class="sub">Guangfu Third Prison · Public Service Portal</div>
+        </div>
+      </div>
+
+      <div class="top-tools">
+        <div class="pill" title="服务电话（示例）">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 3.5h3l1.2 5-2 1.2c1.2 2.3 3.1 4.2 5.4 5.4l1.2-2 5 1.2v3c0 1.1-.9 2-2 2C10 21.3 2.7 14 4.5 5.5c.2-1.1 1.2-2 2-2z" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="mono">010-684913586</span>
+        </div>
+        <div class="pill" id="clockPill" title="当前时间">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10z" stroke="white" stroke-width="1.6"/>
+            <path d="M12 6v6l4 2" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span id="clock" class="mono">--:--</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="nav" aria-label="主导航">
+    <div class="nav-inner">
+      <a href="javascript:void(0)" data-page="home">首页</a>
+      <a href="javascript:void(0)" data-page="notice">信息公告</a>
+      <a href="javascript:void(0)" data-page="interaction">政民互动</a>
+      <a href="javascript:void(0)" data-page="law">法制工作</a>
+      <a href="javascript:void(0)" data-page="prison">监狱信息</a>
+      <a href="javascript:void(0)" data-page="family" class="active">家属平台</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="crumbs" aria-label="面包屑导航">
+      <span>当前位置：</span>
+      <span>首页 <span class="sep">/</span> 家属平台 <span class="sep">/</span> 信息查询 <span class="sep"></span>/</span> 音频查询</span>
+    </div>
+
+    <section class="grid" aria-label="页面主体">
+      <!-- Main -->
+      <div class="card">
+        <div class="card-hd">
+          <h2>音频查询</h2>
+          <span class="tag">服务事项</span>
+        </div>
+        <div class="card-bd">
+          <div class="notice">
+            <strong>温馨提示：</strong>节日期间查询次数过多可能会遇到系统响应缓慢或暂时无法查询的情况，请您耐心等待或稍后再试。感谢您的理解与支持！
+          </div>
+
+          <div class="form" role="form" aria-label="查询表单">
+            <div class="field">
+              <label for="name">服刑人员姓名</label>
+              <input id="name" placeholder="请输入姓名" value="蒋伯驾" autocomplete="off" />
+            </div>
+            <div class="field">
+              <label for="no">六位人员编号</label>
+              <input id="no" placeholder="如：123456" value="362542" class="mono" inputmode="numeric" autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="primary" id="queryBtn">查询录音</button>
+            <button id="resetBtn">重置</button>
+          </div>
+
+          <div class="result" aria-label="查询结果">
+            <div class="row">
+              <div class="k">查询状态</div>
+              <div class="v">
+                <span class="status"><span class="dot"></span> 已检索到记录</span>
+                <span class="mono" style="color:#64748b;font-size:12px;">查询编号：GF3P-2026-0001</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="k">服刑人员</div>
+              <div class="v">
+                <span><strong>蒋伯驾</strong>（编号：<span class="mono">362542</span>）</span>
+                <span style="color:#64748b;font-size:12px;">所属：广府第三监狱</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="k">音频标题</div>
+              <div class="v">
+                <span>春节录音</span>
+                <span style="color:#64748b;font-size:12px;">格式：MP3</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="k">播放/下载</div>
+              <div class="v">
+                <div class="player">
+                  <button class="primary" id="playBtn">▶ 播放</button>
+                  <button id="downloadBtn">⬇ 下载</button>
+                  <button id="reportBtn">反馈问题</button>
+                </div>
+                <span style="color:#64748b;font-size:12px;">有效期：2026年5月16日</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aside -->
+      <aside class="card" aria-label="侧栏信息">
+        <div class="card-hd">
+          <h2>办事指南</h2>
+          <span class="tag">公告</span>
+        </div>
+        <div class="aside-list">
+            <div class="aside-item">
+                <div class="t">查询权限说明</div>
+                <div class="d">本功能仅限已在监狱综合信息系统登记备案的亲属使用。未进行“家属身份认证”的用户将无法检索到相关信息。</div>
+              </div>
+              <div class="aside-item">
+                <div class="t">信息校验规则</div>
+                <div class="d">系统采取严格的“姓名+编号”双重比对机制。如遇姓名中含有生僻字，请尝试使用身份证上的规范文字重新输入。</div>
+              </div>
+              <div class="aside-item">
+                <div class="t">资料存放期限</div>
+                <div class="d">录音属于临时性教育产物，自发布之日起留存 90 个自然日。超过期限后，系统将自动进行删除处理。</div>
+              </div>
+              <div class="aside-item">
+                <div class="t">法律责任告知</div>
+                <div class="d">严禁通过录屏、录音等方式将音频用于非法盈利或网络炒作。任何传播违反相关监管规定的行为将可能导致查询权限被永久注销。</div>
+              </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div>版权所有 © 广府第三监狱</div>
+        <div>备案信息：<span class="mono">GF3P-ICP 00000001</span></div>
+      </div>
+      <div class="links">
+        <a href="javascript:void(0)" data-build>隐私声明</a>
+        <a href="javascript:void(0)" data-build>网站地图</a>
+        <a href="javascript:void(0)" data-build>联系我们</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-mask" id="modalMask" role="dialog" aria-modal="true" aria-label="弹窗">
+    <div class="modal">
+      <div class="modal-hd">
+        <strong id="modalTitle">提示</strong>
+        <button class="xbtn" id="modalCloseX" aria-label="关闭">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-bd" id="modalBody">内容</div>
+      <div class="modal-ft">
+        <button id="modalOk" class="primary">我知道了</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== Clock =====
+    const clockEl = document.getElementById("clock");
+    function pad2(n){ return String(n).padStart(2,"0"); }
+    function tick(){
+      const d = new Date();
+      clockEl.textContent = `${pad2(d.getHours())}:${pad2(d.getMinutes())}:${pad2(d.getSeconds())}`;
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // ===== Modal =====
+    const modalMask = document.getElementById("modalMask");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBody  = document.getElementById("modalBody");
+    const modalOk    = document.getElementById("modalOk");
+    const modalCloseX= document.getElementById("modalCloseX");
+
+    function openModal(title, bodyHtml){
+      modalTitle.textContent = title;
+      modalBody.innerHTML = bodyHtml;
+      modalMask.classList.add("show");
+    }
+    function closeModal(){
+      modalMask.classList.remove("show");
+    }
+    modalOk.addEventListener("click", closeModal);
+    modalCloseX.addEventListener("click", closeModal);
+    modalMask.addEventListener("click", (e)=>{ if(e.target === modalMask) closeModal(); });
+
+    // ===== Nav clicks =====
+    document.querySelectorAll(".nav a").forEach(a=>{
+      a.addEventListener("click", ()=>{
+        const page = a.getAttribute("data-page");
+        if(page === "family"){
+          // keep on current
+          openModal("提示", "当前位于 家属平台/信息查询/<strong>音频查询</strong> ");
+          return;
+        }
+        openModal("提示", "建设中，请稍后再试");
+      });
+    });
+
+    // Footer "build" links
+    document.querySelectorAll("[data-build]").forEach(el=>{
+      el.addEventListener("click", ()=> openModal("提示", "建设中，请稍后再试"));
+    });
+
+    // ===== Page actions =====
+    // 获取相关的 DOM 元素
+    const nameInput = document.getElementById("name");
+    const noInput = document.getElementById("no");
+    const resultArea = document.querySelector(".result");
+
+    // ===== 查询按钮逻辑 =====
+    document.getElementById("queryBtn").addEventListener("click", () => {
+      const nameValue = nameInput.value.trim();
+      const noValue = noInput.value.trim();
+
+      // 校验身份：必须姓名和编号完全匹配
+      if (nameValue === "蒋伯驾" && noValue === "362542") {
+        // 匹配成功
+        resultArea.style.display = "block"; // 显示结果区域
+        openModal("查询结果", "已检索到记录：<br>服刑人员 <strong>蒋伯驾</strong>（编号 <span class='mono'>362542</span>）");
+      } else {
+        // 匹配失败
+        resultArea.style.display = "none"; // 隐藏结果区域
+        openModal("查询失败", "<span class='danger'>人员不存在</span><br>请检查姓名或编号是否输入正确。");
+      }
+    });
+
+    // ===== 重置按钮逻辑 =====
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      nameInput.value = "蒋伯驾";
+      noInput.value = "362542";
+      resultArea.style.display = "none"; // 重置时隐藏结果
+      openModal("提示", "已重置为初始状态");
+    });
+
+    // Play button: MUST show "音频不存在"
+    document.getElementById("playBtn").addEventListener("click", ()=>{
+      openModal("播放失败", "<span class='danger'>音频不存在</span>");
+    });
+
+    document.getElementById("downloadBtn").addEventListener("click", ()=>{
+      openModal("播放失败", "<span class='danger'>音频不存在</span>");
+    });
+
+    // Other buttons: "建设中，请稍后再试"
+    ["reportBtn"].forEach(id=>{
+      document.getElementById(id).addEventListener("click", ()=>{
+        openModal("提示", "建设中，请稍后再试");
+      });
+    });
+
+    // Accessibility: ESC close
+    window.addEventListener("keydown", (e)=>{
+      if(e.key === "Escape") closeModal();
+    });
+  </script>
+</body>
+</html>
