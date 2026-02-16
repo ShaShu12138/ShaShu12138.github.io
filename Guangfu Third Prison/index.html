@@ -709,11 +709,11 @@
 
     // Play button: MUST show "音频不存在"
     document.getElementById("playBtn").addEventListener("click", ()=>{
-      openModal("播放失败", "<span class='danger'>音频不存在</span>");
+      openModal("播放失败", "<span class='danger'>错误：E3012（音频不存在），请联系管理员</span>");
     });
 
     document.getElementById("downloadBtn").addEventListener("click", ()=>{
-      openModal("播放失败", "<span class='danger'>音频不存在</span>");
+      openModal("播放失败", "<span class='danger'>错误：E3012（音频不存在），请联系管理员</span>");
     });
 
     // Other buttons: "建设中，请稍后再试"
@@ -730,3 +730,4 @@
   </script>
 </body>
 </html>
+
