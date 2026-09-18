@@ -1,0 +1,67 @@
+.hud {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.control-help {
+  color: var(--muted);
+  font-size: .78rem;
+  line-height: 1.4;
+  margin: 8px 0 0;
+  max-width: 680px;
+}
+
+.update-panel {
+  margin: 0 22px 14px;
+  padding: 15px 20px;
+  border: 1px solid rgba(217, 255, 103, .25);
+  border-radius: 14px;
+  background: rgba(217, 255, 103, .06);
+}
+
+.update-panel strong {
+  display: block;
+  margin: 5px 0;
+  font-size: .95rem;
+}
+
+.update-panel p {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+  font-size: .9rem;
+}
+
+.experiments {
+  margin: 0 22px 18px;
+  padding: 14px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.experiments > div {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+@media (max-width: 720px) {
+  .hud {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hud > div {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hud > div:nth-child(even) {
+    border-right: 0;
+  }
+
+  .hud > div:last-child {
+    grid-column: 1 / -1;
+    border-bottom: 0;
+  }
+}

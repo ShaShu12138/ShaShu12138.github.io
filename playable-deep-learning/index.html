@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loss Valley — Feel the Learning Rate</title>
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="src/playtest-improvements.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">PLAYABLE DEEP LEARNING</p>
+        <h1>LOSS VALLEY</h1>
+        <p class="lead">Can you choose a step size that gets the learner to the bottom?</p>
+      </div>
+      <div class="badge">Chapter 2</div>
+    </header>
+
+    <section class="game-card">
+      <div class="hud">
+        <div><span class="label">LOSS</span><strong id="lossValue">—</strong></div>
+        <div><span class="label">STEPS</span><strong id="stepCount">0</strong></div>
+        <div><span class="label">STATUS</span><strong id="statusText">READY</strong></div>
+        <div><span class="label">WEIGHT</span><strong id="weightValue">—</strong></div>
+        <div><span class="label">GRADIENT</span><strong id="gradientValue">—</strong></div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="lossCanvas" width="960" height="440" aria-label="A playable one-dimensional loss landscape"></canvas>
+        <div class="canvas-note">Lower is better.</div>
+      </div>
+
+      <div class="controls">
+        <div class="slider-block">
+          <div class="slider-heading">
+            <label for="learningRate">STEP SIZE <span class="term">(learning rate)</span></label>
+            <output id="rateValue">0.18</output>
+          </div>
+          <input id="learningRate" type="range" min="0.02" max="1.10" value="0.18" step="0.01" />
+          <div class="range-labels"><span>TINY UPDATES</span><span>HUGE UPDATES</span></div>
+          <p class="control-help">The step size multiplies the gradient. It changes how far the weight moves on every update—not the animation speed.</p>
+        </div>
+        <button id="trainButton">TRAIN</button>
+        <button id="resetButton" class="secondary">RESET</button>
+      </div>
+
+      <div class="update-panel" aria-live="polite">
+        <span class="label">CURRENT UPDATE</span>
+        <strong>new weight = old weight − step size × gradient</strong>
+        <p id="updateNumbers">Choose a step size, then press TRAIN.</p>
+      </div>
+
+      <div id="message" class="message" aria-live="polite">
+        <h2>Pick a step size.</h2>
+        <p>The learner can feel which direction goes downhill. Your job is to decide how far it moves each time.</p>
+      </div>
+
+      <div class="experiments">
+        <span class="label">COMPARE THREE RUNS</span>
+        <div><span id="tinyExperiment">○ Tiny update</span><span id="middleExperiment">○ Controlled update</span><span id="hugeExperiment">○ Huge update</span></div>
+      </div>
+
+      <p class="source-tag">Source: François Chollet, <em>Deep Learning with Python</em>, Chapter 2, “The engine of neural networks: Gradient-based optimization.”</p>
+    </section>
+
+    <section class="reveal">
+      <p class="eyebrow">WHAT DID YOU JUST CONTROL?</p>
+      <h2>The mountain is a simplified picture of training.</h2>
+      <div class="mapping">
+        <article><span>YOUR POSITION</span><strong>Model weight</strong><p>The adjustable model parameter is shown as one position on the horizontal axis.</p></article>
+        <article><span>HEIGHT</span><strong>Loss</strong><p>Lower height represents a lower loss: a better value for this simplified training example.</p></article>
+        <article><span>DOWNHILL DIRECTION</span><strong>Gradient</strong><p>The gradient describes how loss changes around the current parameter value. Training moves in the opposite direction.</p></article>
+        <article><span>STEP SIZE</span><strong>Learning rate</strong><p>The learning rate scales how far the parameter moves on each update.</p></article>
+      </div>
+      <div class="takeaway">
+        <strong>Try three experiments:</strong> use a tiny step, a middle step, and a huge step. Tiny steps need many updates. A reasonable step can descend efficiently. A very large step can jump to bad locations instead of settling near the minimum.
+      </div>
+      <p class="source-tag">Claims in this section: Chapter 2, “The engine of neural networks: Gradient-based optimization,” especially “Stochastic gradient descent.” This page uses a one-parameter curve as a teaching simplification; real neural networks have many parameters.</p>
+    </section>
+
+    <footer>
+      <p>Based on <em>Deep Learning with Python</em> by François Chollet. Visuals and interaction are original for this learning material.</p>
+    </footer>
+  </main>
+  <script src="src/game.js?v=2"></script>
+</body>
+</html>
