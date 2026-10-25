@@ -66,17 +66,3 @@ ScrollTrigger.batch(".progress-bar", {
 		});
 	},
 });
-
-// SweetAlert2集成 - “联系我”按钮点击弹出消息
-document.querySelector("#tel").addEventListener("click", (e) => {
-	e.preventDefault();
-	Swal.fire({
-		title: "Prefer Email or Message",
-		text: "I'm currently unavailable for calls.",
-		icon: "warning",
-		confirmButtonText: "Got it!",
-		confirmButtonColor: "#FADA5E",
-		background: "#1a1a1a",
-		color: "#fff",
-	});
-});

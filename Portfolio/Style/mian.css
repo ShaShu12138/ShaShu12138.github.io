@@ -308,3 +308,203 @@ a {
 html {
   scroll-behavior: smooth;
 }
+
+/* ---------- Additions: hero contrast, notes, experience ---------- */
+
+/* Hero grows with its content instead of clipping at 100vh */
+.hero {
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+.hero-image {
+  height: 100%;
+  min-height: 100vh;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.45) 42%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.hero .tagline {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.hero .hero-sub {
+  font-size: 1.05rem;
+  color: #dcdcdc;
+}
+
+/* Project card footnote */
+.project-note {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+}
+
+.gallery-note {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.gallery-note a {
+  color: #fada5e;
+}
+
+/* Experience */
+.experience {
+  max-width: 900px;
+}
+
+.xp-item {
+  border-left: 2px solid #fada5e;
+  padding-left: 22px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.xp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.xp-role {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.xp-org {
+  color: #fada5e;
+  font-weight: normal;
+}
+
+.xp-date {
+  color: #8a8a8a;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.xp-item ul {
+  list-style: none;
+}
+
+.xp-item li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: #ccc;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.xp-item li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: #fada5e;
+}
+
+/* Tablet: two cards per row */
+@media (max-width: 900px) {
+  .project-item {
+    flex-basis: 46%;
+    max-width: none;
+  }
+
+  section {
+    padding: 70px 28px;
+  }
+}
+
+/* Phone: one card per row, stacked nav */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .logo {
+    width: 100%;
+    font-size: 1.35rem;
+    text-align: center;
+  }
+
+  .navbar nav {
+    width: 100%;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px 4px;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+
+  section {
+    padding: 55px 20px;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .project-item {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .skill {
+    width: 100%;
+  }
+
+  .hero {
+    padding-top: 150px;
+  }
+
+  .hero .tagline {
+    font-size: 1.15rem;
+  }
+
+  .hero .hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .xp-item {
+    padding-left: 14px;
+  }
+}
+
+/* Fix: hr was 80vw wide inside a narrower column, so it overflowed to one side */
+.hero hr,
+.contact hr {
+  width: min(80vw, 100%);
+  left: auto;
+  transform: none;
+}
